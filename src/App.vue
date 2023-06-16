@@ -19,7 +19,7 @@ export default {
     }
   },
   mounted(){
-    this.data();
+    this.getData();
   }
 }
 </script>
