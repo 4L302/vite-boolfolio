@@ -1,33 +1,31 @@
-<script>
-import axios from "axios";
-import MainComponent from "./components/MainComponent.vue";
+<template>
+  <HeaderComponent/>
+  <RouterView></RouterView>
+</template>
 
+<script>
+import HeaderComponent from './components/HeaderComponent.vue';
+import MainComponent from './components/MainComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 export default {
-  'name': "App",
-  data(){
-    return{
-      title: 'Boolfolio',
-      products: [],
-      apiUrl: 'http://127.0.0.1:8000/api/'
+  name: 'App',
+  data() {
+    return {
+
     }
   },
   methods: {
-    getData(){
-      axios.get(`${this.apiUrl}/projects`).then((res) => {
-        console.log(res);
-      })    
-    }
+
   },
-  mounted(){
-    this.getData();
+  components: {
+    HeaderComponent,
+    MainComponent,
+    FooterComponent
+  },
+  mounted() {
+
   }
 }
 </script>
 
-<template>
-  
-</template>
-
-<style scoped>
-
-</style>
+<style lang="scss" scoped></style>
